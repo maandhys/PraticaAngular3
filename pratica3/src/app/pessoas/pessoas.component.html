@@ -1,3 +1,34 @@
-<p>
-  pessoas works!
-</p>
+<table border="1">
+  <tr>
+      <td>id</td>
+      <td>Nome</td>
+      <td>e-mail</td>
+      <td>detalhe</td>
+  </tr>
+  <tr *ngFor="let item of pessoasArray">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>
+        <button onclick="detalhe(item.id)">Detalhe</button>
+      </td>
+  </tr>
+  <div *ngIf="detalhePessoa">
+    <h1 >Detalhe da Pessoa</h1>
+    <app-pessoas-detalhe [recebepessoa]="item" (respostaPessoa)="reciverFeedback($event)"></app-pessoas-detalhe>
+  </div>
+</table>
+
+a) Coloque no template do componente pessoas uma tabela que irá conter 4
+colunas: id, nome, e-mail, detalhe. ok
+b) Faça um ngFor para cada linha dessa tabela exibir estes dados das pessoas
+que foram salvas no array de pessoas. Na coluna detalhe, adicione um botão
+com o título “Detalhe” observe a função de clique chamando uma função
+detalhe que irá receber o id da pessoa como parâmetro
+c) Adicione uma div após a tabela com um <h1> contendo o título Detalhe da
+Pessoa.
+d) Adicione um ngIf para essa div ser ativada somente se o booleano do detalhe
+da pessoa estiver como true
+e) Nessa div, inclua o componente pessoas-detalhe passando através de input
+os dados do objeto pessoa declarado no componente Pessoas e criando o
+output para receber dados atualizados referentes a essa pessoa.

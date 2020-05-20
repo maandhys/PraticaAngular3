@@ -6,13 +6,10 @@ import { Pessoas } from '../models/pessoas.model';
 })
 export class PessoasService {
 
-   pessoas: Pessoas[];
-  constructor() { }
-
   pessoasJson = [
     {
       "id": 0,
-      "nome": "Saunders Rosa",
+      "name": "Saunders Rosa",
       "idade": 23,
       "corOlhos": "brown",
       "sexo": "male",
@@ -58,5 +55,35 @@ export class PessoasService {
       "sexo": "female",
       "email": "bonnieestrada@eyewax.com"
     }
-  ]
+  ];
+
+  pessoasArray: Pessoas[] = this.pessoasJson;
+  pessoa: Pessoas;
+
+  constructor() { }
+
+  getPessoas() { 
+    return this.pessoasArray;
+  }
+
+  getPessoaId(id) : Pessoas {
+    return this.pessoa;
+    // this.pessoasArray.indexOf(id);
+  }
+
+  atualizarPessoa(id) { 
+    console.log(id);
+  }
 }
+
+
+
+// a) declare uma propriedade pessoas que será um array de pessoas. ** let
+// pessoasArray: pessoas[] = [ARRAY DE PESSOAS AQUI]; **
+// b) crie um método getPessoas que deverá retornar um array de Pessoas
+// listagem de todas as pessoas.
+// c) crie um método getPessoa(id) que deverá retornar os dados específicos de
+// uma pessoa. Este método deverá percorrer seu array de Pessoas e
+// encontrar a pessoa pelo id e retornar apenas os dados desta pessoa.
+// d) Crie um método atualizarPessoa(id) que deverá exibir no console.log o id
+// recebido como parâmetro para atualizar a pessoa.

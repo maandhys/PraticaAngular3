@@ -5,5 +5,4 @@ export interface Pessoas {
     "corOlhos": string
     "sexo": string
     "email": string
-
 }
