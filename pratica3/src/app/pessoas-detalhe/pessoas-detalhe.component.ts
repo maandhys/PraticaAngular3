@@ -1,5 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'protractor';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PessoasService } from '../services/pessoas.service';
 
 @Component({
