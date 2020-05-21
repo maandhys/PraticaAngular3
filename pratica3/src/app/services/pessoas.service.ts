@@ -62,16 +62,24 @@ export class PessoasService {
 
   constructor() { }
 
-  getPessoas() { 
+  getPessoas() {
     return this.pessoasArray;
   }
 
-  getPessoaId(id) : Pessoas {
+  getPessoaId(id): Pessoas {
     return this.pessoa;
-    // this.pessoasArray.indexOf(id);
   }
 
-  atualizarPessoa(id) { 
+  changePessoa(pessoa) {
+    this.pessoasArray.forEach(x => {
+      if (x.id == pessoa.id) {
+        x.name = pessoa.name;
+      }
+    });
+    return true;
+  }
+
+  atualizarPessoa(id) {
     console.log(id);
   }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { PessoasService } from '../services/pessoas.service';
+import { Pessoas } from '../models/pessoas.model';
 
 @Component({
   selector: 'app-pessoas-detalhe',
@@ -8,18 +9,19 @@ import { PessoasService } from '../services/pessoas.service';
 })
 export class PessoasDetalheComponent implements OnInit {
 
-  
-  @Output() respostaPessoa = new EventEmitter();
+  @Output() alterarPessoa = new EventEmitter();
+  @Input() pessoa: Pessoas;
 
-  constructor( servicoPessoa: PessoasService) { }
+  novaPessoa: Pessoas;
+
+  constructor( private servicoPessoa: PessoasService) { }
 
   ngOnInit() {
   }
 
-  alterarDados(pessoa) {
-
-
-
+  alteraPessoa(changes) {
+    this.alterarPessoa.emit(changes);
+    var change = this.servicoPessoa.changePessoa(changes);
   }
 
 }

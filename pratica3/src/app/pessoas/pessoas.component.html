@@ -10,12 +10,13 @@
       <td>{{item.name}}</td>
       <td>{{item.email}}</td>
       <td>
-        <button onclick="detalhe(item.id)">Detalhe</button>
+        <button (click)="detalhe(item)">Detalhe</button>
       </td>
   </tr>
   <div *ngIf="detalhePessoa">
-    <h1 >Detalhe da Pessoa</h1>
-    <app-pessoas-detalhe [recebepessoa]="item" (respostaPessoa)="reciverFeedback($event)"></app-pessoas-detalhe>
+    <h4>Detalhe da Pessoa</h4>
+    <app-pessoas-detalhe [pessoa]="pessoa" (alterarPessoa)="mudarPessoa($event)"></app-pessoas-detalhe>
   </div>
 </table>
+
 

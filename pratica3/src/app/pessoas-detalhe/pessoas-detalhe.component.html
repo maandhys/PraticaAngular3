@@ -1,10 +1,16 @@
 <div>
-  <p></p>
-  <button onclick="alterarDados()">Alterar Dados</button>
+  <label>Nome:</label> {{ pessoa.name }} <br/>
+  <label>Idade:</label> {{ pessoa.idade }} <br/>
+  <label>Cor dos Olhos:</label> {{ pessoa.corOlhos }} <br/>
+  <label>Sexo:</label> {{ pessoa.sexo }} <br/>
+  <label>Email:</label> {{ pessoa.email }} <br/>
 </div>
-
-
-c) exibir esses dados no template em uma div e parágrafos para todos os dados
-de uma pessoa.
-d) Adicionar um botão alterar dados no fim deste template com uma função de
-click para atualizar os dados de uma pessoa.
+<br/>
+<br/>
+<div>
+  <h4> Alterar Informacões</h4>
+    <button (click)="(alteraPessoa({ name: 'nayara', id: pessoa.id}))">
+      Salvar
+    </button>
+</div>
+ 
